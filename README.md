@@ -6,7 +6,7 @@
 * 목표 : 이미지 프로세싱을 이용하여 교량 하단 영상에서 기울어진 각도 획득
 * 사용언어/프로그램 : python, OpenCV
 
-### 프로그램
+### 이미지 프로세싱
 ```python
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 ```
@@ -37,6 +37,7 @@ CannyAccThresh = cv2.threshold(CLAHE_img,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU
 CannyAccThresh=(CannyAccThresh+20)
 CannyThresh = CannyAccThresh/4*3
 ```
+# 이름모름 설명추가
 이미지의 밝기에 따라 canny 에지 검출알고리즘의 임계값을 자동으로 계산해주어야 함. 임계값은 ...을통해주며 ..값과 임계값의 비는 실험적으로 구했음
 
 ```python
@@ -54,8 +55,9 @@ vertices = np.array([[(int(w/2)-gap,h),(int(w/2)-gap, 0), (int(w/2)+gap,0),(int(
 cv2.fillPoly(mask, vertices, ignore_mask_color)
 masked_edges = cv2.bitwise_and(edges, mask)
 ```
+# 허시케이드...
 Ha...를 통해 에지 검출시 소요시간이 기므로 ROI()를 지정하며 시간을 줄여줌. 교량의 하단은 가로선이 두드러지므로 아래와 같이 ROI를 설정함.
-
+# 사진
 
 
 ### 정확도
