@@ -24,10 +24,14 @@ CannyThresh = CannyAccThresh/4*3
 ```
 이미지의 히스토그램이 한쪽으로 치우쳐져 있으면 한쪽이 너무 밝아 상대적으로 어두운 현상이 발생하므로 히스토그램을 펼쳐주는 평활화 작업이 필요함.
 
+![image](https://user-images.githubusercontent.com/46476876/72883456-ae08b500-3d47-11ea-967b-9ab0034c6747.png)
+왼쪽부터 그레일스케일, 양방향필터, 평활화한 이미지
 ```python
 CannyAccThresh = cv2.threshold(CLAHE_img,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)[0]
 ```
 이미지의 밝기에 따라 canny 에지 검출알고리즘의 임계값을 자동으로 계산해주어야 함. 임계값은 Otsu의 이진화 방법을 이용하였여 임계값을 구하였음
+
+![image](https://user-images.githubusercontent.com/46476876/72883335-77329f00-3d47-11ea-914c-6c76fc1e23b6.png)
 
 ```python
 edges = cv2.Canny(CLAHE_img, CannyThresh,CannyAccThresh)
@@ -45,7 +49,7 @@ cv2.fillPoly(mask, vertices, ignore_mask_color)
 masked_edges = cv2.bitwise_and(edges, mask)
 ```
 Hough Transformation를 통해 에지 검출 시에 이미지 전체에대해 수행하면 소요시간이 기므로 관심영역(Region of Interest, ROI)을 지정하며 시간을 줄여줌. 일반적인 교량의 하단은 가로선이 두드러지므로 아래와 같이 ROI를 설정함.
-# [사진 추가]
+![image](https://user-images.githubusercontent.com/46476876/72883497-be209480-3d47-11ea-84c8-54020f8c397f.png)
 
 
 ### 정확도
