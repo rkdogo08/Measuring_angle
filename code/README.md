@@ -38,7 +38,7 @@ edges = cv2.Canny(CLAHE_img, CannyThresh,CannyAccThresh)
 ```
 canny를 통해 엣지를 얻음.
 
-[OpenCV 메뉴얼]()
+[OpenCV 메뉴얼](https://docs.opencv.org/2.4/modules/imgproc/doc/feature_detection.html?highlight=cv2.canny#cv2.Canny)
   - 쓰레시 홀드 필터가 이동하면서 픽셀의 그레디언트high값보다 크면 엣지, low보다 작으면 엣지가 아니라고 인식. low와 high 사이에 있으면 그 주위에 엣지가 있 지 확인 후에 있으 엣지라고 인식
 
 ```python
