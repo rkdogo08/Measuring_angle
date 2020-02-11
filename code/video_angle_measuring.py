@@ -5,7 +5,7 @@ from numpy import linalg
 import time
 
 #cap = cv2.VideoCapture(0)
-filepath='500M_AF/500M_AF_주간 (4)'
+filepath='video_name'
 f = open(filepath+'.txt','w')
 cap = cv2.VideoCapture(filepath+'.mp4')
 
