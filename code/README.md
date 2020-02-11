@@ -20,13 +20,14 @@ bilateral_img=cv2.bilateralFilter(gray,3,20,20)
 ```python
 clahe = cv2.createCLAHE(clipLimit=0.5, tileGridSize=(4,4))
 CLAHE_img = clahe.apply(bilateral_img)
-CannyThresh = CannyAccThresh/4*3
 ```
 이미지의 히스토그램이 한쪽으로 치우쳐져 있으면 한쪽이 너무 밝아 상대적으로 어두운 현상이 발생하므로 히스토그램을 펼쳐주는 평활화 작업이 필요함.
 
 ![image](https://user-images.githubusercontent.com/46476876/72883456-ae08b500-3d47-11ea-967b-9ab0034c6747.png)
 왼쪽부터 그레일스케일, 양방향필터, 평활화한 이미지
 ```python
+
+CannyThresh = CannyAccThresh/4*3
 CannyAccThresh = cv2.threshold(CLAHE_img,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)[0]
 ```
 이미지의 밝기에 따라 canny 에지 검출알고리즘의 임계값을 자동으로 계산해주어야 함. 임계값은 Otsu의 이진화 방법을 이용하였여 임계값을 구하였음
