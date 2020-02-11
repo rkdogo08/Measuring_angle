@@ -11,11 +11,9 @@ bilateral_img=cv2.bilateralFilter(gray,3,20,20)
 
 [OpenCV 메뉴얼](https://docs.opencv.org/2.4/modules/imgproc/doc/filtering.html?highlight=bilateral#cv2.bilateralFilter)
 
-- d - 필터링 중에 사용되는 각 픽셀 근처의 직경. 양성이면, sigmaSpace로부터 계산된다.
-
-- sigmaColor는 색 공간에서 시그마를 필터링합니다. 상기 파라미터의 값이 클수록 화소 근방 (sigmaSpace 참조) 내에서 더 멀리 색 세미 동일한 색상의 큰 영역의 결과를 함께 혼합 될 것이라는 것을 의미한다.
-
-- sigmaSpace는 좌표 공간에서 시그마를 필터링합니다. 매개 변수의 값이 클수록 더 멀리 픽셀만큼 자신의 색 (sigmaColor 참조) 충분히 가까이 서로 영향을 미치는 것을 의미합니다. d>0 거라고 때없이 sigmaSpace의 근방 크기를 지정한다. 그렇지 않으면, d를 sigmaSpace에 비례한다.
+- d : 필터링을 수행 할 필터의 크기.
+- sigmaColor : 색공간의 크기. 필터크기 내의 범위에서 더 멀리있는 색까지 혼합되어 넓은 영역이 반균등한 색을 가지게 되는 것을 의미한다.
+- sigmaSpace : 거리공간의 크기. 파라미터의 값이 클수록 가까이 있는 픽셀뿐만 아니라 더 멀리 있는 픽셀의 영향을 받는 것을 의미한다.
 
 ```python
 clahe = cv2.createCLAHE(clipLimit=0.5, tileGridSize=(4,4))
