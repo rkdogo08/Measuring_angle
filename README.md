@@ -5,3 +5,8 @@
 * 기간 : 19 겨울학기
 * 목표 : 이미지 프로세싱을 이용하여 교량 하단 영상에서 교량의 각도 획득
 * 사용언어/프로그램 : python, OpenCV
+
+### 내용
+[이미지 프로세싱](https://github.com/rkdogo08/Measuring_angle/blob/master/image__process.ipynb)
+
+[파이썬 코드](https://github.com/rkdogo08/Measuring_angle/blob/master/code/video_angle_measuring.py)
