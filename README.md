@@ -9,4 +9,7 @@
 ### 내용
 [이미지 프로세싱](https://github.com/rkdogo08/Measuring_angle/blob/master/image__process.ipynb)
 
+[이미지 전처리 전 후 ](https://github.com/rkdogo08/Measuring_angle/blob/master/image_process_bef_aft.md)
+
 [파이썬 코드](https://github.com/rkdogo08/Measuring_angle/blob/master/code/video_angle_measuring.py)
+
